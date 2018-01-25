@@ -22,10 +22,11 @@ export class HeroService {
 
   private heroesUrl = 'api/heroes';  // URL to web api
 
-  getHeroes(): Observable<Hero[]> {
+  /** GET heroes from the server */
+  getHeroes (): Observable<Hero[]> {
     // Todo: send the message _after_ fetching the heroes
     this.messageService.add('HeroService: fetched heroes');
-    return of(HEROES);
+    return this.http.get<Hero[]>(this.heroesUrl)
   }
 
   getHero(id: number): Observable<Hero> {
