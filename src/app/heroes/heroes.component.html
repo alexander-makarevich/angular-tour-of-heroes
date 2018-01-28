@@ -1,10 +1,10 @@
 <h2>My Heroes</h2>
 
 <div>
-  <label>
+  <label>Hero name:
     <input #heroName />
   </label>
-  <!-- (click) passes input value to add() ant then clears the input -->
+  <!-- (click) passes input value to add() and then clears the input -->
   <button (click)="add(heroName.value); heroName.value=''">
     add
   </button>
